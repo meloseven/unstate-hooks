@@ -1,7 +1,7 @@
 {
-  "name": "ebiz-state",
+  "name": "@youzan/ebiz-state",
   "version": "0.0.1",
-  "main": "index.js",
+  "main": "./es/index.js",
   "author": "huxuewang <huxuewang@youzan.com>",
   "license": "MIT",
   "dependencies": {

@@ -1,0 +1,3 @@
+wechatRobot:
+    script:
+        - node scripts/robot.js

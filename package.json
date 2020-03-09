@@ -20,7 +20,7 @@
     "start": "node scripts/dev.js",
     "dev": "yarn start",
     "build": "yarn tsbuild && ./node_modules/.bin/babel src --out-dir es --extensions=.ts,.tsx",
-    "release": "yarn build && npm version patch && ynpm publish",
+    "release": "./scripts/release.sh",
     "tsbuild": "tsc --build tsconfig.json"
   },
   "types": "./types/index.d.ts",

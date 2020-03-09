@@ -1,4 +1,4 @@
-import createStore from "../src";
+import createStore from "../../src";
 const initData = {
   number: 0,
   theme: 'black',

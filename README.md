@@ -1,5 +1,15 @@
 # hooks 状态管理库
 
+## 说明
+
+hooks状态管理有利于再FC中更好的去管理全局状态，数据更多的是全局通用数据，如果只在组件内使用的数据，请使用`useState`。
+
+## 开始
+
+```js
+import createStore from '@youzan/ebiz-state';
+```
+
 ## API一览
 
 ```js
@@ -62,13 +72,9 @@ export default function Demo() {
 createStore(initData, true);
 ```
 
-## 测试
+## useStoreBy和useStore的区别
 
-```sh
-git clone git@gitlab.qima-inc.com:huxuewang/ebiz-state.git
-yyarn
-yyarn start
-```
+用法上，`useStoreBy`是对单个对象属性的操作，更新会重新渲染订阅到该属性的地方，而`useStore`是对整个对象的操作，更新会重新渲染所有用到`useStore`和`useStoreBy`的地方
 
 ## 如何扩展useStoreBy
 
@@ -91,6 +97,10 @@ const useStoreWithActions = function() {
 }
 ```
 
+## 异步DEMO
+
+[异步demo](http://gitlab.qima-inc.com/ebiz-web/ebiz-state/tree/master/example/async)
+
 ## context和memo问题
 
 因为`store`的`data`是定义在`context`里，但是`context`的存在一个已知问题：
@@ -100,3 +110,11 @@ const useStoreWithActions = function() {
 > this Hook will trigger a rerender with the latest context value passed to that MyContext provider. Even if an ancestor uses React.memo or shouldComponentUpdate, a rerender will still happen starting at the component itself using useContext.
 
 类似与官方的推荐做法，我们现在的做法是：`createStore`默认会根据传入的对象拆解，生成多个`context`，以达到更好的性能效果。
+
+## 测试
+
+```sh
+git clone git@gitlab.qima-inc.com:huxuewang/ebiz-state.git
+yyarn
+yyarn start
+```

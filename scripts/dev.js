@@ -6,7 +6,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 function startTask() {
   const config = {
-    entry: "./test/index.tsx",
+    entry: "./example/async/index.tsx",
     output: {
       filename: "index.js",
       path: path.resolve(process.cwd(), "es")
@@ -35,7 +35,14 @@ function startTask() {
               loader: 'babel-loader',
             }
           ]
-        }
+        },
+        {
+          test: /\.css$/i,
+          use: [
+            "style-loader",
+            "css-loader"
+          ]
+        },
       ]
     },
     resolve: {
@@ -46,7 +53,7 @@ function startTask() {
       new HTMLWebpackPlugin({
         title: 'Test',
         filename: 'index.html',
-        template: path.resolve(process.cwd(), 'test/index.html')
+        template: path.resolve(process.cwd(), 'example/index.html')
       }),
     ],
     optimization: {}

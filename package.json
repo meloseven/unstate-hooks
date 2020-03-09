@@ -1,0 +1,40 @@
+{
+  "name": "ebiz-state",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "huxuewang <huxuewang@youzan.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "react": "^16.13.0"
+  },
+  "scripts": {
+    "start": "node scripts/dev.js",
+    "dev": "yarn start",
+    "build": "yarn tsbuild && ./node_modules/.bin/babel src --out-dir es --extensions=.ts,.tsx",
+    "release": "yarn build && npm version patch && ynpm publish",
+    "tsbuild": "tsc --build tsconfig.json"
+  },
+  "types": "./types/index.d.ts",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@babel/runtime": "^7.8.4",
+    "@types/lodash": "^4.14.149",
+    "@types/react": "^16.9.23",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "react-dom": "^16.13.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3",
+    "webpack": "^4.42.0",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

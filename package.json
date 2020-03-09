@@ -1,6 +1,6 @@
 {
   "name": "ebiz-state",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "author": "huxuewang <huxuewang@youzan.com>",
   "license": "MIT",
@@ -8,6 +8,14 @@
     "lodash": "^4.17.15",
     "react": "^16.13.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.qima-inc.com/ebiz-web/ebiz-state"
+  },
+  "files": [
+    "es/**",
+    "types/**"
+  ],
   "scripts": {
     "start": "node scripts/dev.js",
     "dev": "yarn start",

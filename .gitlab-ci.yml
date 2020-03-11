@@ -1,0 +1,5 @@
+wechatRobot:
+    script:
+        - node scripts/robot.js
+    only:
+        - master

@@ -935,7 +935,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^16.9.23":
+"@types/react@*":
   version "16.9.23"
   resolved "http://registry.npm.qima-inc.com/@types/react/download/@types/react-16.9.23.tgz#1a66c6d468ba11a8943ad958a8cb3e737568271c"
   integrity sha1-GmbG1Gi6EaiUOtlYqMs+c3VoJxw=
@@ -2354,6 +2354,11 @@ enhanced-resolve@^4.0.0, enhanced-resolve@^4.1.0:
     memory-fs "^0.5.0"
     tapable "^1.0.0"
 
+enquire.js@^2.1.6:
+  version "2.1.6"
+  resolved "http://registry.npm.qima-inc.com/enquire.js/download/enquire.js-2.1.6.tgz#3e8780c9b8b835084c3f60e166dbc3c2a3c89814"
+  integrity sha1-PoeAybi4NQhMP2DhZtvDwqPImBQ=
+
 entities@^1.1.1:
   version "1.1.2"
   resolved "http://registry.npm.qima-inc.com/entities/download/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
@@ -2668,7 +2673,7 @@ for-in@^1.0.2:
   resolved "http://registry.npm.qima-inc.com/for-in/download/for-in-1.0.2.tgz#81068d295a8142ec0ac726c6e2200c30fb6d5e80"
   integrity sha1-gQaNKVqBQuwKxybG4iAMMPttXoA=
 
-formulr@~0.2.11:
+formulr@~0.2.3:
   version "0.2.14"
   resolved "http://registry.npm.qima-inc.com/formulr/download/formulr-0.2.14.tgz#d50a934574b52a6704f9ab367b08ff2ef4357991"
   integrity sha1-1QqTRXS1KmcE+as2ewj/LvQ1eZE=
@@ -4433,15 +4438,6 @@ react-transition-group@^2.6.0:
     prop-types "^15.6.2"
     react-lifecycles-compat "^3.0.4"
 
-react@^16.13.0:
-  version "16.13.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.13.0.tgz#d046eabcdf64e457bbeed1e792e235e1b9934cf7"
-  integrity sha512-TSavZz2iSLkq5/oiE7gnFzmURKZMltmi193rm5HEoUDAXpzT9Kzw6oNZnGoai/4+fUnm7FqS5dwgUL34TujcWQ==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
-
 "readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.3, readable-stream@^2.3.6, readable-stream@~2.3.6:
   version "2.3.7"
   resolved "http://registry.npm.qima-inc.com/readable-stream/download/readable-stream-2.3.7.tgz#1eca1cf711aef814c04f62252a36a62f6cb23b57"
@@ -5672,10 +5668,10 @@ zan-json-parse@^1.0.0:
   resolved "http://registry.npm.qima-inc.com/zan-json-parse/download/zan-json-parse-1.0.2.tgz#457d9017f33c0b4361fe73ebdd5e61ef81818f3c"
   integrity sha1-RX2QF/M8C0Nh/nPr3V5h74GBjzw=
 
-zent@^8.3.0:
-  version "8.3.0"
-  resolved "http://registry.npm.qima-inc.com/zent/download/zent-8.3.0.tgz#24f18577a2fbd609591343c68830b59c70558e58"
-  integrity sha1-JPGFd6L71glZE0PGiDC1nHBVjlg=
+zent@^7.4.3:
+  version "7.4.3"
+  resolved "http://registry.npm.qima-inc.com/zent/download/zent-7.4.3.tgz#3338f65dc04dbc0026d10f131a19209cacfcfc29"
+  integrity sha1-Mzj2XcBNvAAm0Q8TGhkgnKz8/Ck=
   dependencies:
     "@types/autosize" "^3.0.6"
     "@types/sortablejs" "~1.7.2"
@@ -5683,16 +5679,17 @@ zent@^8.3.0:
     big.js "^5.2.2"
     classnames "^2.2.6"
     date-fns "^2.7.0"
-    formulr "~0.2.11"
+    enquire.js "^2.1.6"
+    formulr "~0.2.3"
     react-is "^16.8.1"
     react-transition-group "^2.6.0"
     sortablejs "~1.9.0"
     tslib "^1.9.3"
     utility-types "^3.4.1"
     warning "^4.0.3"
-    zenticons "3.3.0"
+    zenticons "3.2.0"
 
-zenticons@3.3.0:
-  version "3.3.0"
-  resolved "http://registry.npm.qima-inc.com/zenticons/download/zenticons-3.3.0.tgz#a6810cee8a616e61611818be1b9b4cdee93e41a5"
-  integrity sha1-poEM7ophbmFhGBi+G5tM3uk+QaU=
+zenticons@3.2.0:
+  version "3.2.0"
+  resolved "http://registry.npm.qima-inc.com/zenticons/download/zenticons-3.2.0.tgz#782d8dca1ccce2091966b17edb68b2603d8e8980"
+  integrity sha1-eC2NyhzM4gkZZrF+22iyYD2OiYA=

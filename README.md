@@ -26,6 +26,7 @@ const { Provider, useStore, useStoreBy } = store;
 store.ts
 
 ```js
+import createStore from '@youzan/ebiz-state';
 const initData = {
   number: 0
 };
@@ -53,7 +54,7 @@ demo.tsx
 import store from "./store";
 const { useStoreBy } = store;
 export default function Demo() {
-  const { data, update } = useStoreBy('number');
+  const [ data, update ] = useStoreBy('number');
   return (
     <div>
       {data}
@@ -82,7 +83,7 @@ createStore(initData, true);
 
 ```js
 const useStoreWithActions = function() {
-  const { data, update } = useStoreBy('number');
+  const [ data, update ] = useStoreBy('number');
   const increment = () => {
     update(data + 1)
   }

@@ -3,7 +3,7 @@ import store from "./store";
 import DeepTree from './deepTree';
 const { useStoreBy } = store;
 export default function Demo() {
-  const { data } = useStoreBy('theme');
+  const [ data ] = useStoreBy('theme');
   console.log('1')
   const color = useMemo(() => {
     console.log('color')

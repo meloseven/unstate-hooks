@@ -11,7 +11,7 @@ const initData: IStoreData = {
 const store = createStore(initData, true);
 
 export const useStoreByList = () => {
-  const { data, update } = store.useStoreBy("list");
+  const [data, update] = store.useStoreBy("list");
   useEffect(() => {
     getList().then(res => {
       update(res);

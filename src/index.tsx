@@ -3,19 +3,13 @@ import React, {
   Dispatch,
   SetStateAction,
   useLayoutEffect,
-  useState
+  useState,
+  useCallback
 } from "react";
 import { isEqual } from "lodash";
 
-export interface IStore<T> {
-  data: T;
-  update: (value: Partial<T>) => void;
-}
-
-export interface IStoreBy<T, K extends keyof T> {
-  data: T[K];
-  update: (value: T[K]) => void;
-}
+export type IStore<T> = [T, (value: Partial<T>) => void];
+export type IStoreBy<T, K extends keyof T> = [T[K], (value: T[K]) => void]
 
 export interface ICommonObject {
   [key: string]: any;
@@ -73,9 +67,9 @@ export default function createStore<T extends ICommonObject>(
     if (data === NO_PROVIDER) {
       console.warn("[ebiz-state]Component not wrapper with Provider");
     }
-    return {
+    return [
       data,
-      update: (value: T[keyof T]) => {
+      useCallback((value: T[K]) => {
         let newData: T[keyof T];
         if (Array.isArray(value)) {
           newData = [...(value as [])] as T[keyof T];
@@ -85,16 +79,16 @@ export default function createStore<T extends ICommonObject>(
           newData = value;
         }
 
-        if (debug) {
+        /* if (debug) {
           console.log("[ebiz-state] useStoreBy: old data", data);
           console.log("[ebiz-state] useStoreBy: new data", newData);
-        }
-        if (!isEqual(newData, data)) {
+        } */
+        //if (!isEqual(newData, data)) {
           const setter = setterMap.get(key);
           setter(newData);
-        }
-      }
-    };
+        //}
+      }, [])
+    ];
   };
 
   const useStore = function(): IStore<T> {
@@ -108,11 +102,11 @@ export default function createStore<T extends ICommonObject>(
     dataKeys.forEach(key => {
       const store = useStoreBy(key);
       stores.set(key, store);
-      data[key] = store.data;
+      data[key] = store[0];
     });
-    return {
+    return [
       data,
-      update: (value: Partial<T>) => {
+      (value: Partial<T>) => {
         if (typeof value !== "object") {
           throw new Error(
             `[ebiz-state] useStore: please use data of object type, but now is ${typeof value}`
@@ -124,12 +118,12 @@ export default function createStore<T extends ICommonObject>(
           console.log("[ebiz-state] useStore: new data", newData);
         }
         if (!isEqual(newData, data)) {
-          stores.forEach(({ update }, key) => {
+          stores.forEach(([_, update], key) => {
             update(newData[key]);
           });
         }
       }
-    };
+    ];
   };
 
   return {

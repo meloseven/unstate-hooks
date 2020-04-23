@@ -2,7 +2,7 @@ import React from "react";
 import store from "./store";
 const { useStoreBy } = store;
 export default function Demo() {
-  const { data, update } = useStoreBy('number');
+  const [ data, update ] = useStoreBy('number');
   return (
     <div>
       {data}

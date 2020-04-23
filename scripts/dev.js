@@ -6,7 +6,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 function startTask() {
   const config = {
-    entry: "./example/async/index.tsx",
+    entry: "./example/basic/index.tsx",
     context: path.resolve(__dirname, '../'),
     output: {
       filename: "index.js",

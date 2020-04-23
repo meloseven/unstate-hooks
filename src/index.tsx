@@ -2,7 +2,7 @@ import React, {
   useContext,
   Dispatch,
   SetStateAction,
-  useEffect,
+  useLayoutEffect,
   useState
 } from "react";
 import { isEqual } from "lodash";
@@ -50,7 +50,7 @@ export default function createStore<T extends ICommonObject>(
     const { name } = props;
     const [data, setter] = useState(initialData[name]);
     const context = contextMap.get(name);
-    useEffect(() => {
+    useLayoutEffect(() => {
       setterMap.set(name, setter);
       valueMap.set(name, data);
     }, [data, setter]);

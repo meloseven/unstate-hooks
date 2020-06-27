@@ -1,6 +1,6 @@
 {
   "name": "unstate-hooks",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "./es/index.js",
   "author": "melo <melosevene@1321340518.com>",
   "license": "MIT",
@@ -53,5 +53,7 @@
     "@types/react": "^16.8.0",
     "react": "^16.8.0"
   },
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
 }

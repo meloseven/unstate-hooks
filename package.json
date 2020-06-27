@@ -1,12 +1,12 @@
 {
-  "name": "@youzan/ebiz-state",
+  "name": "unstate-hooks",
   "version": "0.0.7",
   "main": "./es/index.js",
-  "author": "huxuewang <huxuewang@youzan.com>",
+  "author": "melo <melosevene@1321340518.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://gitlab.qima-inc.com/ebiz-web/ebiz-state"
+    "url": "https://github.com/meloseven/unstate-hooks"
   },
   "files": [
     "es/**",
@@ -34,7 +34,6 @@
     "@babel/runtime": "^7.8.4",
     "@types/lodash": "^4.14.149",
     "@types/react-dom": "^16.9.5",
-    "@youzan/ebiz-components": "^0.1.22",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.13.0",
     "babel-plugin-zent": "^2.2.2",

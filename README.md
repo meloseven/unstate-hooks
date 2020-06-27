@@ -7,7 +7,7 @@ hooks状态管理有利于再FC中更好的去管理全局状态，数据更多�
 ## 开始
 
 ```js
-import createStore from '@youzan/ebiz-state';
+import createStore from 'unstate-hooks';
 ```
 
 ## API一览
@@ -26,7 +26,7 @@ const { Provider, useStore, useStoreBy } = store;
 store.ts
 
 ```js
-import createStore from '@youzan/ebiz-state';
+import createStore from 'unstate-hooks';
 const initData = {
   number: 0
 };
@@ -100,7 +100,7 @@ const useStoreWithActions = function() {
 
 ## 异步DEMO
 
-[异步demo](http://gitlab.qima-inc.com/ebiz-web/ebiz-state/tree/master/example/async)
+[异步demo](https://github.com/meloseven/unstate-hooks/tree/master/example/async)
 
 ## context和memo问题
 
@@ -111,11 +111,3 @@ const useStoreWithActions = function() {
 > this Hook will trigger a rerender with the latest context value passed to that MyContext provider. Even if an ancestor uses React.memo or shouldComponentUpdate, a rerender will still happen starting at the component itself using useContext.
 
 类似与官方的推荐做法，我们现在的做法是：`createStore`默认会根据传入的对象拆解，生成多个`context`，以达到更好的性能效果。
-
-## 测试
-
-```sh
-git clone git@gitlab.qima-inc.com:huxuewang/ebiz-state.git
-yyarn
-yyarn start
-```

@@ -1,6 +1,6 @@
 {
   "name": "unstate-hooks",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "main": "./es/index.js",
   "author": "meloseven <meloseven@qq.com>",
   "license": "MIT",

@@ -28,7 +28,7 @@ export default function createStore<T extends ICommonObject>(
 ) {
   if (typeof initialData !== "object") {
     throw new Error(
-      `[ebiz-state]please use data of object type, but now is ${typeof initialData}`
+      `[unstate hooks]please use data of object type, but now is ${typeof initialData}`
     );
   }
 
@@ -65,7 +65,7 @@ export default function createStore<T extends ICommonObject>(
       data = useContext(contextMap.get(key)) as T[K];
     }
     if (data === NO_PROVIDER) {
-      console.warn("[ebiz-state]Component not wrapper with Provider");
+      console.warn("[unstate-hooks]Component not wrapper with Provider");
     }
     return [
       data,
@@ -80,8 +80,8 @@ export default function createStore<T extends ICommonObject>(
         }
 
         /* if (debug) {
-          console.log("[ebiz-state] useStoreBy: old data", data);
-          console.log("[ebiz-state] useStoreBy: new data", newData);
+          console.log("[unstate hooks] useStoreBy: old data", data);
+          console.log("[unstate hooks] useStoreBy: new data", newData);
         } */
         //if (!isEqual(newData, data)) {
           const setter = setterMap.get(key);
@@ -94,7 +94,7 @@ export default function createStore<T extends ICommonObject>(
   const useStore = function(): IStore<T> {
     if (process.env.NODE_ENV === 'development') {
       console.warn(
-        '[ebiz-state] for better performance, wo recommand to ues "useStoreBy"'
+        '[unstate hooks] for better performance, wo recommand to ues "useStoreBy"'
       );
     }
     const stores = new Map<string, IStoreBy<T, keyof T>>();
@@ -109,13 +109,13 @@ export default function createStore<T extends ICommonObject>(
       (value: Partial<T>) => {
         if (typeof value !== "object") {
           throw new Error(
-            `[ebiz-state] useStore: please use data of object type, but now is ${typeof value}`
+            `[unstate hooks] useStore: please use data of object type, but now is ${typeof value}`
           );
         }
         const newData = Object.assign({}, data, { ...value });
         if (debug) {
-          console.log("[ebiz-state] useStore: old data", data);
-          console.log("[ebiz-state] useStore: new data", newData);
+          console.log("[unstate hooks] useStore: old data", data);
+          console.log("[unstate hooks] useStore: new data", newData);
         }
         if (!isEqual(newData, data)) {
           stores.forEach(([_, update], key) => {
